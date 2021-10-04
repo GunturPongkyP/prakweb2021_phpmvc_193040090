@@ -1,7 +1,15 @@
-<?php /*
-Guntur Pongky Prayusti
-193040090
-https://github.com/GunturPongkyP/prakweb2021_phpmvc_193040090
-pertemuan 4 - 1 Oktober 2021
-Mempelajari mengenaii MVC dengan PHP
-*/ ?>
+<?php
+
+class Controller{
+    public function view($view, $data = [])
+    {
+        require_once '../app/views/' . $view . '.php';
+    }
+    
+        public function model($model)
+        {
+            require_once '../app/models/' . $model . '.php'; 
+            return new $model;
+        }
+    
+}
